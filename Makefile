@@ -1,2 +1,2 @@
 test:
-	go run gotest.tools/gotestsum@latest --format=testdox
+	go run gotest.tools/gotestsum@latest --format=testdox ./patterns/...
