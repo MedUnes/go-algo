@@ -1,125 +1,64 @@
+# Segment Tree
 
-## `flood_fill/flood_fill_test.go`
+## 0) Interview framing (Google/FAANG)
+**What they test:** range queries + point updates in O(log n), clean indexing, and correctness of recursion.  
+**What you should say out loud:**
+- “Segment tree stores aggregates over intervals.”
+- “Build O(n), query O(log n), update O(log n).”
+- “Each node covers a segment; children split it in half.”
+
+---
+
+## 1) Overview
+A Segment Tree supports fast range queries (sum/min/max) while allowing updates, ideal when you have many queries and modifications.
+
+## 2) Problems it solves
+- Range Sum Query – Mutable (LC #307)
+- Range Minimum Query
+- General interval aggregates
+
+## 3) Core invariants
+- Node value equals aggregate over its segment.
+- Update fixes path from leaf to root.
+- Query splits into disjoint covered segments.
+
+## 4) Complexity
+- Build: O(n)
+- Query: O(log n)
+- Update: O(log n)
+
+## 5) Go notes
+- Use iterative or recursive; recursive is easier to reason about in interviews.
+- Validate boundaries clearly (left/right inclusive).
+- Decide behavior for empty input.
+
+## 6) Pitfalls
+1. Off-by-one segment boundaries.
+2. Wrong neutral element for min/sum.
+3. Not handling updates correctly.
+
+## 7) Practice katas
+- Range Sum Query - Mutable (LC #307)
+- Count of Range Sum (LC #327) (advanced)
+
+## 8) Further reading
+- https://cp-algorithms.com/data_structures/segment_tree.html
+- https://leetcode.com/problems/range-sum-query-mutable/
+
+---
+
+## Contract (your Go API)
 
 ```go
-package flood_fill
+package segment_tree
 
-import "testing"
-
-func TestFloodFill_Core(t *testing.T) {
-	t.Parallel()
-
-	image := [][]int{
-		{1, 1, 1},
-		{1, 1, 0},
-		{1, 0, 1},
-	}
-
-	got := FloodFill(clone2DInt(image), 1, 1, 2)
-
-	want := [][]int{
-		{2, 2, 2},
-		{2, 2, 0},
-		{2, 0, 1},
-	}
-
-	assert2DIntEqual(t, want, got)
+type SegmentTree struct {
+	tree []int
+	n    int
 }
 
-func TestFloodFill_NoOpWhenSameColor(t *testing.T) {
-	t.Parallel()
-
-	image := [][]int{
-		{0, 0},
-		{0, 0},
-	}
-	got := FloodFill(clone2DInt(image), 0, 0, 0)
-	assert2DIntEqual(t, image, got)
-}
-
-func TestNumIslands_Core(t *testing.T) {
-	t.Parallel()
-
-	grid := [][]byte{
-		[]byte("11110"),
-		[]byte("11010"),
-		[]byte("11000"),
-		[]byte("00000"),
-	}
-	got := NumIslands(clone2DByte(grid))
-	if got != 1 {
-		t.Fatalf("NumIslands: want 1, got %d", got)
-	}
-
-	grid2 := [][]byte{
-		[]byte("11000"),
-		[]byte("11000"),
-		[]byte("00100"),
-		[]byte("00011"),
-	}
-	got2 := NumIslands(clone2DByte(grid2))
-	if got2 != 3 {
-		t.Fatalf("NumIslands: want 3, got %d", got2)
-	}
-}
-
-func TestMaxAreaOfIsland_Core(t *testing.T) {
-	t.Parallel()
-
-	grid := [][]int{
-		{0, 0, 1, 0, 0},
-		{0, 1, 1, 1, 0},
-		{0, 0, 1, 0, 0},
-		{1, 1, 0, 0, 0},
-	}
-	// Largest island is the plus-shape area = 5
-	got := MaxAreaOfIsland(clone2DInt(grid))
-	if got != 5 {
-		t.Fatalf("MaxAreaOfIsland: want 5, got %d", got)
-	}
-}
-
-// --- helpers ---
-
-func clone2DInt(a [][]int) [][]int {
-	out := make([][]int, len(a))
-	for i := range a {
-		out[i] = append([]int(nil), a[i]...)
-	}
-	return out
-}
-
-func clone2DByte(a [][]byte) [][]byte {
-	out := make([][]byte, len(a))
-	for i := range a {
-		out[i] = append([]byte(nil), a[i]...)
-	}
-	return out
-}
-
-func assert2DIntEqual(t *testing.T, want, got [][]int) {
-	t.Helper()
-
-	if len(want) != len(got) {
-		t.Fatalf("row count mismatch: want %d, got %d", len(want), len(got))
-	}
-	for r := range want {
-		if len(want[r]) != len(got[r]) {
-			t.Fatalf("col count mismatch row %d: want %d, got %d", r, len(want[r]), len(got[r]))
-		}
-		for c := range want[r] {
-			if want[r][c] != got[r][c] {
-				t.Fatalf("cell[%d][%d] mismatch: want %d, got %d\nwant=%v\ngot=%v", r, c, want[r][c], got[r][c], want, got)
-			}
-		}
-	}
-}
-
-// TODO (edge cases you should implement yourself):
-// - FloodFill: sr/sc out of bounds (define policy).
-// - FloodFill: empty image.
-// - NumIslands: single cell grids.
-// - MaxAreaOfIsland: all zeros / all ones.
-// - 8-directional variant (diagonals).
-// - Very large grid performance (iterative BFS to avoid recursion overflow).
+func NewSegmentTree(nums []int) *SegmentTree
+func (st *SegmentTree) Update(index int, val int)
+func (st *SegmentTree) RangeSum(left int, right int) int
+func (st *SegmentTree) RangeMin(left int, right int) int
 ```
