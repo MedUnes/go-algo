@@ -189,7 +189,7 @@ func assertPathSetEqual(t *testing.T, want, got [][]int) {
 // - Disconnected graph: only reachable nodes returned.
 // - Deep graph (1000+ depth): iterative DFS avoids recursion overflow.
 // - HasCycle for undirected graphs (different logic).
-// - FindAllPaths with cycles: define “simple path only” and prevent revisits in current path.
+// - FindAllPaths with cycles: define "simple path only" and prevent revisits in current path.
 // - Start == target: FindAllPaths returns [[start]].
 // - Empty graph / nil graph: define policy.
 //

@@ -3,9 +3,9 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** priority queue mechanics, maintaining invariants, and median logic under streaming input.  
 **What you should say out loud:**
-- “Left heap is a max-heap (lower half), right heap is a min-heap (upper half).”
-- “Invariant: size(left) == size(right) or size(left) == size(right)+1.”
-- “Median is top of left (odd) or avg of both tops (even).”
+- "Left heap is a max-heap (lower half), right heap is a min-heap (upper half).”
+- "Invariant: size(left) == size(right) or size(left) == size(right)+1.”
+- "Median is top of left (odd) or avg of both tops (even).”
 
 ---
 
@@ -27,8 +27,8 @@ Two Heaps maintains two balanced heaps to support fast median retrieval or acces
 By keeping halves separated and balanced, median is always at the boundary.
 
 ## 4) Typical formulations
-- “Design a data structure that supports addNum and findMedian.”
-- “Return running medians.”
+- "Design a data structure that supports addNum and findMedian.”
+- "Return running medians.”
 
 ## 5) Complexity
 - **Insert:** O(log n)

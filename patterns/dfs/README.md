@@ -1,11 +1,11 @@
 # Depth-First Search (DFS)
 
 ## 0) Interview framing (Google/FAANG)
-**What they test:** recursion/stack discipline, visited invariants, cycle detection, and “explore then backtrack” reasoning.  
+**What they test:** recursion/stack discipline, visited invariants, cycle detection, and "explore then backtrack” reasoning.  
 **What you should say out loud:**
-- “DFS explores one branch fully before trying the next.”
-- “Invariant: visited prevents infinite loops.”
-- “For cycle detection in directed graphs, track recursion stack (colors).”
+- "DFS explores one branch fully before trying the next.”
+- "Invariant: visited prevents infinite loops.”
+- "For cycle detection in directed graphs, track recursion stack (colors).”
 
 ---
 
@@ -21,16 +21,16 @@ Depth-First Search traverses a graph by going as deep as possible before backtra
 ## 3) Core idea & invariants
 ### Invariants
 - **Visited invariant:** each node is processed once (for traversal).
-- **Stack invariant (directed cycle):** a back-edge to a node “in stack” implies a cycle.
+- **Stack invariant (directed cycle):** a back-edge to a node "in stack” implies a cycle.
 - **Path invariant (all-paths):** current path reflects recursion stack and is restored on return.
 
 ### Why it works
 Following edges recursively explores the entire reachable subgraph; backtracking restores state enabling exploration of alternate branches.
 
 ## 4) Typical formulations (interview prompts)
-- “Return DFS traversal order from node s.”
-- “Detect if directed graph has a cycle.”
-- “Return all paths from s to t (typically DAG).”
+- "Return DFS traversal order from node s.”
+- "Detect if directed graph has a cycle.”
+- "Return all paths from s to t (typically DAG).”
 
 ## 5) Complexity
 - **Time:** O(V + E) for traversal/cycle detection

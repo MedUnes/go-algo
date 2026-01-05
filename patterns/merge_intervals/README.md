@@ -3,9 +3,9 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** sorting + single pass merge, correct overlap logic, and edge cases.  
 **What you should say out loud:**
-- “Sort by start.”
-- “Maintain a merged list; compare current interval with last merged.”
-- “If overlapping, extend end; else append.”
+- "Sort by start.”
+- "Maintain a merged list; compare current interval with last merged.”
+- "If overlapping, extend end; else append.”
 
 ---
 
@@ -23,9 +23,9 @@ Merge Intervals consolidates overlapping ranges. It appears in scheduling, calen
 - Overlap condition (inclusive): `curr.Start <= last.End`.
 
 ## 4) Typical prompts
-- “Merge intervals”
-- “Insert interval”
-- “Meeting rooms (min number of rooms)”
+- "Merge intervals”
+- "Insert interval”
+- "Meeting rooms (min number of rooms)”
 
 ## 5) Complexity
 - **Time:** O(n log n) due to sorting

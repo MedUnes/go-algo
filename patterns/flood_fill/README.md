@@ -3,14 +3,14 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** grid traversal, visited marking, and BFS/DFS choice.  
 **What you should say out loud:**
-- “This is graph traversal on a grid.”
-- “Neighbors are 4-directional (unless stated otherwise).”
-- “Use BFS/DFS; mark visited to avoid loops.”
+- "This is graph traversal on a grid.”
+- "Neighbors are 4-directional (unless stated otherwise).”
+- "Use BFS/DFS; mark visited to avoid loops.”
 
 ---
 
 ## 1) Overview
-Flood Fill recolors/marks a connected region in a grid. The same pattern solves “count islands” and “max island area”.
+Flood Fill recolors/marks a connected region in a grid. The same pattern solves "count islands” and "max island area”.
 
 ## 2) Problems it solves
 - Flood Fill (recolor region)

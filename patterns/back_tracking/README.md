@@ -3,14 +3,14 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** recursion structure, pruning, correctness, and avoiding global bugs.  
 **What you should say out loud:**
-- “I build a partial solution, and when it violates constraints, I stop exploring.”
-- “I revert state before returning (undo step).”
-- “Pruning reduces branching.”
+- "I build a partial solution, and when it violates constraints, I stop exploring.”
+- "I revert state before returning (undo step).”
+- "Pruning reduces branching.”
 
 ---
 
 ## 1) Overview
-Backtracking is DFS over the space of possibilities, with explicit “choose → explore → unchoose” steps.
+Backtracking is DFS over the space of possibilities, with explicit "choose → explore → unchoose” steps.
 
 ## 2) Problems it solves
 - Permutations / combinations / subsets
@@ -22,10 +22,10 @@ Backtracking is DFS over the space of possibilities, with explicit “choose →
 - State is fully restored after returning from recursion.
 
 ## 4) Typical prompts
-- “Generate all permutations”
-- “Choose k out of n”
-- “Solve N-Queens”
-- “Solve Sudoku”
+- "Generate all permutations”
+- "Choose k out of n”
+- "Solve N-Queens”
+- "Solve Sudoku”
 
 ## 5) Complexity
 - Usually exponential (often `O(n!)` or `O(C(n,k))`)

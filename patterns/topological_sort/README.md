@@ -3,9 +3,9 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** DAG ordering, cycle detection, and correctness proof via in-degree / DFS postorder.  
 **What you should say out loud:**
-- “Topological ordering exists iff the graph is acyclic.”
-- “Kahn’s algorithm repeatedly removes nodes with in-degree 0.”
-- “I verify cycles by checking whether I processed all nodes.”
+- "Topological ordering exists iff the graph is acyclic.”
+- "Kahn’s algorithm repeatedly removes nodes with in-degree 0.”
+- "I verify cycles by checking whether I processed all nodes.”
 
 ---
 
@@ -20,16 +20,16 @@ Topological Sort produces a linear ordering of vertices in a **DAG** such that f
 ## 3) Core idea & invariants
 ### Kahn (BFS / in-degree)
 - Invariant: queue contains only nodes with in-degree 0 (no unmet prerequisites).
-- Each time you pop `u`, you “remove” its outgoing edges by decrementing neighbors’ in-degrees.
+- Each time you pop `u`, you "remove” its outgoing edges by decrementing neighbors’ in-degrees.
 
 ### DFS-based
 - Invariant: pushing node to output on postorder (after exploring children) yields reverse topological order.
 - Cycle detection uses recursion stack / color marking.
 
 ## 4) Typical interview prompts
-- “Return any topological order of nodes 0..n-1.”
-- “Detect if cycle exists.”
-- “Course Schedule / Course Schedule II.”
+- "Return any topological order of nodes 0..n-1.”
+- "Detect if cycle exists.”
+- "Course Schedule / Course Schedule II.”
 
 ## 5) Complexity
 - **Time:** O(V + E)

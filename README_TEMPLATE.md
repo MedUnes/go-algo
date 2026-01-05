@@ -3,9 +3,9 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** {{core pattern}}, invariants, edge cases, and complexity.  
 **What you should say out loud:**
-- “I’m maintaining {{state/invariant}} while scanning {{input}} once.”
-- “The key invariant is {{invariant}}.”
-- “This avoids O(n²) by {{reason}}; complexity is {{O(...)}}.”
+- "I’m maintaining {{state/invariant}} while scanning {{input}} once.”
+- "The key invariant is {{invariant}}.”
+- "This avoids O(n²) by {{reason}}; complexity is {{O(...)}}.”
 
 ---
 

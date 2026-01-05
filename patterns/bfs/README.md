@@ -3,14 +3,14 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** graph modeling, shortest path in unweighted graphs, queue discipline, and visited invariants.  
 **What you should say out loud:**
-- “BFS explores level-by-level using a queue.”
-- “Invariant: when a node is dequeued, we have the shortest distance to it (unweighted graph).”
-- “We mark visited when enqueueing to avoid duplicates and cycles.”
+- "BFS explores level-by-level using a queue.”
+- "Invariant: when a node is dequeued, we have the shortest distance to it (unweighted graph).”
+- "We mark visited when enqueueing to avoid duplicates and cycles.”
 
 ---
 
 ## 1) Overview
-Breadth-First Search traverses a graph in increasing distance from a start node. It’s the default tool for shortest paths in **unweighted** graphs and “k hops away” problems.
+Breadth-First Search traverses a graph in increasing distance from a start node. It’s the default tool for shortest paths in **unweighted** graphs and "k hops away” problems.
 
 ## 2) Problem(s) it solves
 - Traverse all nodes reachable from a source
@@ -27,9 +27,9 @@ Breadth-First Search traverses a graph in increasing distance from a start node.
 Queue order ensures we process all nodes at distance `d` before any node at distance `d+1`.
 
 ## 4) Typical formulations (interview prompts)
-- “Return BFS traversal order starting from node s.”
-- “Return nodes grouped by distance (levels).”
-- “Return shortest path between s and t in an unweighted graph.”
+- "Return BFS traversal order starting from node s.”
+- "Return nodes grouped by distance (levels).”
+- "Return shortest path between s and t in an unweighted graph.”
 
 ## 5) Complexity
 - **Time:** O(V + E)

@@ -3,9 +3,9 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** invariants with indices, linear-time scanning, and correct pointer movement.  
 **What you should say out loud:**
-- “I keep left/right pointers and move the one that helps satisfy the condition.”
-- “Invariant: everything left of `left` and right of `right` is already ruled out / processed.”
-- “This avoids nested loops → O(n).”
+- "I keep left/right pointers and move the one that helps satisfy the condition.”
+- "Invariant: everything left of `left` and right of `right` is already ruled out / processed.”
+- "This avoids nested loops → O(n).”
 
 ---
 
@@ -26,10 +26,10 @@ Two pointers uses two indices to traverse arrays/strings/linked lists efficientl
 - Linked list cycle: fast moves 2 steps, slow 1 step.
 
 ## 4) Typical formulations
-- “Two sum in sorted array”
-- “Remove duplicates in-place”
-- “Detect cycle in linked list”
-- “Max area container”
+- "Two sum in sorted array”
+- "Remove duplicates in-place”
+- "Detect cycle in linked list”
+- "Max area container”
 
 ## 5) Complexity
 - **Time:** O(n)

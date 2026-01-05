@@ -3,9 +3,9 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** prefix-based search, space/time tradeoffs, and clean API.  
 **What you should say out loud:**
-- “Each node represents a prefix; traversing chars is O(L).”
-- “Insert/Search/StartsWith are O(L).”
-- “Memory tradeoff: many nodes; can compress via radix tree.”
+- "Each node represents a prefix; traversing chars is O(L).”
+- "Insert/Search/StartsWith are O(L).”
+- "Memory tradeoff: many nodes; can compress via radix tree.”
 
 ---
 

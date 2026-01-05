@@ -4,14 +4,14 @@
 ## 0) Interview framing (Google/FAANG)
 **What they test:** Maintaining a rolling state (sum/frequency) while moving two pointers.  
 **What you should say out loud:**
-- “I maintain a window `[l..r]` and a state (sum / counts / distinct).”
-- “I expand `r` until valid, then shrink `l` to minimal while staying valid.”
-- “Invariant: state always matches the current window.”
+- "I maintain a window `[l..r]` and a state (sum / counts / distinct).”
+- "I expand `r` until valid, then shrink `l` to minimal while staying valid.”
+- "Invariant: state always matches the current window.”
 
 ---
 
 ## 1) Overview
-Sliding Window turns many “all subarrays/substrings” problems from O(n²) brute force into O(n) by maintaining a dynamic window and updating a small state incrementally.
+Sliding Window turns many "all subarrays/substrings” problems from O(n²) brute force into O(n) by maintaining a dynamic window and updating a small state incrementally.
 
 ## 2) Problems it solves
 - Fixed-size window aggregations (max sum / average)
@@ -22,15 +22,15 @@ Sliding Window turns many “all subarrays/substrings” problems from O(n²) br
 ### Invariants
 - Window is `[left, right]` (or `[left, right)`); define it once and stick to it.
 - State (sum / frequency map / distinct count) always reflects exactly the window content.
-- For “min window”: `formed == required` means the window is valid.
+- For "min window”: `formed == required` means the window is valid.
 
 ### Why it works
 You never move pointers backward, so each character/element is processed O(1) times on average → total O(n).
 
 ## 4) Typical formulations
-- “Max sum of any subarray of size k”
-- “Longest substring with at most k distinct chars”
-- “Minimum substring containing all chars of t” (Minimum Window Substring)
+- "Max sum of any subarray of size k”
+- "Longest substring with at most k distinct chars”
+- "Minimum substring containing all chars of t” (Minimum Window Substring)
 
 ## 5) Complexity
 - **Time:** O(n) typical (each pointer moves at most n)
@@ -45,7 +45,7 @@ You never move pointers backward, so each character/element is processed O(1) ti
 ## 7) Common pitfalls
 1. Off-by-one with window boundaries.
 2. Forgetting to decrement counts when moving `left`.
-3. Not defining “k distinct” as **at most** vs **exactly**.
+3. Not defining "k distinct” as **at most** vs **exactly**.
 
 ## 8) Practice katas
 - Longest Substring Without Repeating Characters (LC #3)
@@ -54,7 +54,7 @@ You never move pointers backward, so each character/element is processed O(1) ti
 
 ## 9) Variations
 - Fixed vs variable window
-- “At most k” vs “exactly k” (often derived)
+- "At most k” vs "exactly k” (often derived)
 - Monotonic queue (for max/min in window)
 
 ## 10) Further reading
